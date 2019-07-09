@@ -1,4 +1,4 @@
-<form #f="ngForm" (ngSubmit)="onSubmit(f)">
+<form #f="ngForm" (ngSubmit)="auth.login(f.value)">
 	<div class="form-grusernameoup">
 		<label for="identifier">User Name</label>
     <input type="text"  [(ngModel)]="identifier" name="identifier"
@@ -10,5 +10,5 @@
     <input type="password" name="password"  [(ngModel)]="password" class="form-control" id="password" placeholder="Password">
   </div>
  <!-- <pre>{{ f.form.value | json }}</pre> -->
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-primary btn-sm">Submit</button>
 </form>
