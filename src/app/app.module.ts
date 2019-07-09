@@ -6,8 +6,15 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 
+
+import { AuthModule } from './auth/auth.module';
+
 @NgModule({
-  imports: [BrowserModule, FormsModule, RouterModule.forRoot([])],
+  imports: [BrowserModule, AuthModule, FormsModule, RouterModule.forRoot([
+    { path: '', redirectTo: 'home', pathMatch: 'full' },
+    { path: 'auth', loadChildren: './auth/auth.module#AuthModule' },
+    { path: 'home', loadChildren: './home/home.module#HomeModule' }
+  ])],
   declarations: [AppComponent, NavbarComponent],
   bootstrap: [AppComponent]
 })

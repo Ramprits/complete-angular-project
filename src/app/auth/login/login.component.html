@@ -1,3 +1,14 @@
-<p>
-login works!
-</p>
+<form #f="ngForm" (ngSubmit)="onSubmit(f)">
+	<div class="form-grusernameoup">
+		<label for="identifier">User Name</label>
+    <input type="text"  [(ngModel)]="identifier" name="identifier"
+         #pickedUsername="ngModel" class="form-control" id="identifier"  placeholder="Enter email">
+    
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" name="password"  [(ngModel)]="password" class="form-control" id="password" placeholder="Password">
+  </div>
+ <!-- <pre>{{ f.form.value | json }}</pre> -->
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
